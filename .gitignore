@@ -1,0 +1,8 @@
+/*
+!config
+!.gitignore
+!Vagrantfile
+!README.md
+
+.DS_store
+*~
