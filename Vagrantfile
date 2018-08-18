@@ -19,7 +19,6 @@ sudo apt-get update
 sudo apt-get -y upgrade
 sudo apt-get -y install python3-pip
 sudo apt-get -y install sshpass
-sudo apt-get install python-pip
 sudo pip3 install Fabric==1.14.0
 sudo pip3 install Fabric3
 sudo pip3 install ansible==2.4.2.0
