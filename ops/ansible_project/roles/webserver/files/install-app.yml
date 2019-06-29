@@ -1,0 +1,36 @@
+---
+
+- name: Install WSGI HTTP server
+  apt:
+    name: gunicorn
+  
+- name: Python Framework
+  easy_install:
+    name: flask
+
+- name: Create new directory
+  file:
+    path: "{{ app_dir }}"
+    state: directory
+    mode: 0755
+
+- name: Drop app src
+  copy:
+    src: hello.py
+    dest: "{{ app_dir }}/hello.py"
+
+- name: Install supervisor
+  apt:
+    name: supervisor
+
+- name: Drop supervisord conf
+  template:
+    src: app.conf.j2
+    dest: /etc/supervisor/conf.d/app.conf
+
+- name: Start supervisor
+  service:
+    name: supervisor
+    enabled: yes
+    state: restarted
+...

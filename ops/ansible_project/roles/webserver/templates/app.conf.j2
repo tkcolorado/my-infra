@@ -1,0 +1,3 @@
+[program:{{ app_name }}]
+command = gunicorn --bind {{ server_ip }}:{{ server_port }} {{ app_name }}:app
+directory = {{ app_dir }}
