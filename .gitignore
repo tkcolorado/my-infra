@@ -3,6 +3,7 @@
 !.gitignore
 !Vagrantfile
 !README.md
+!ops
 
 .DS_store
 *~
