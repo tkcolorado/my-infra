@@ -1,0 +1,21 @@
+---
+
+- name: Add universe repo
+  apt_repository:
+    repo: deb http://archive.ubuntu.com/ubuntu xenial universe
+    state: present
+    update_cache: yes
+
+- name: Install Packages
+  apt:
+    name: "{{ item }}"
+  with_items:
+    - python-setuptools
+    - software-properties-common
+
+- name: Install pip
+  easy_install:
+    name: pip
+    state: latest
+    
+...

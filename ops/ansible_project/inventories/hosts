@@ -1,0 +1,2 @@
+[webservers]
+server2 ansible_host=172.16.200.102 ansible_port=22 ansible_user=root ansible_ssh_pass=root ansible_python_interpreter=/usr/bin/python3
