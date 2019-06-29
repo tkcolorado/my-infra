@@ -1,7 +1,16 @@
 ---
   
 - hosts: webservers
-  roles:
-    - common
-    - webserver
+  tasks: 
+    - name: sum module
+      sum:
+        num: 10
+        touch: true
+      register: sum_result
+
+    - debug: var=sum_result
+    #   when: sum_result.sum < 100      
+#   roles:
+#     - common
+#     - webserver
 ...
